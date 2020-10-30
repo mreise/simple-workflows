@@ -17,3 +17,6 @@ jobs:
       run: |
         docker pull alpine
         docker run --rm alpine /bin/sh -c "echo Hello alpine"
+
+    - name: Show secret
+      run: echo "My_Secret: ${{ secrets.MY_SECRET }}"
