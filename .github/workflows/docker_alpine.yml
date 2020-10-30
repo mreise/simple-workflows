@@ -15,5 +15,5 @@ jobs:
 
     - name: Run alpine image
       run: |
-        docker pull docker pull alpine
+        docker pull alpine
         docker run --rm alpine /bin/sh -c "echo Hello alpine"
