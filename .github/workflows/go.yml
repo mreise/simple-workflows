@@ -30,7 +30,16 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v ./example/go
+      run: go build -v -o ./example/go/hello ./example/go
 
     - name: Test
       run: go test -v ./example/go
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.0
+      with:
+        # Artifact name
+        name: hello
+        # A file, directory or wildcard pattern that describes what to upload
+        path: ./example/go/hello
+        # The desired behavior if no files are found using the provided path.
