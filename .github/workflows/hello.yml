@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Run Hello
+name: Run Hello Example
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -25,10 +25,10 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.0.5
         with:
-        # Artifact name
-        name: hello
-        # Destination path
-        path: ./example/go/hello
+          # Artifact name
+          name: hello
+          # Destination path
+          path: ./example/go/hello
 
       # Runs a set of commands using the runners shell
       - name: Run hello
