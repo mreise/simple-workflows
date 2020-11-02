@@ -17,11 +17,31 @@ limitations under the License.
 package main
 
 import (
-	"fmt"
-
-	"github.com/golang/example/stringutil"
+	"log"
+	"os"
+	"path/filepath"
 )
 
+const FILE = "test.txt"
+
 func main() {
-	fmt.Println(stringutil.Reverse("!selpmaxe oG ,olleH"))
+	dir, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	f, err := os.OpenFile(filepath.Join(dir, FILE), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+	var array []string
+	array = append(array, "Item1", "Item2")
+	for _, item := range array {
+		if _, err := f.WriteString(item + "\n"); err != nil {
+			log.Fatal(err)
+		}
+	}
+	err = f.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
