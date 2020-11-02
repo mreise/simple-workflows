@@ -47,5 +47,9 @@ jobs:
           # Runs a set of commands using the runners shell
     - name: Run hello
       run: ./example/go/hello
-    - name: cat test txt
-      run: cat test.txt
+      
+    - name: iterate over test txt
+      run: |
+        while read line; do
+        echo "$line"
+        done < test.txt 
