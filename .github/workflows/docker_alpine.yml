@@ -18,5 +18,7 @@ jobs:
         docker pull alpine
         docker run --rm alpine /bin/sh -c "echo Hello alpine"
 
+    - name: Run curl
+      run: curl https://www.daimler.com/de/ -o daimler.com
     - name: Show secret
       run: echo ${{ secrets.MY_SECRET }}
