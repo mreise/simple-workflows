@@ -34,7 +34,7 @@ func main() {
 		log.Fatal(err)
 	}
 	var array []string
-	array = append(array, "Item1", "Item2")
+	array = append(array, "Hello", "Go")
 	for _, item := range array {
 		if _, err := f.WriteString(item + "\n"); err != nil {
 			log.Fatal(err)
