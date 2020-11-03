@@ -1,4 +1,4 @@
-name: Build Hello Example
+name: Build Docker Example
 
 on:
   push:
